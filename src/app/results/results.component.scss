@@ -1,0 +1,35 @@
+div.results {
+  width: 1920px;
+  height: 1080px;
+  background-image: url(../../assets/pantallas/4pantalla_resultado.jpg);
+
+  div.stars-container {
+    width: fit-content;
+    display: block;
+    margin: 0 auto;
+    div.stars {
+      display: block;
+      float: left;
+      width: 180px;
+      height: 180px;
+      background-repeat: no-repeat;
+      &.gris {
+        background-image: url(../../assets/assets/estrellaGris.png);
+      }
+      &.yellow {
+        background-image: url(../../assets/assets/estrella.png);
+      }
+    }
+  }
+
+
+  div.newGame {
+    position: absolute;
+    bottom: 150px;
+    left: 700px;
+    width: 550px;
+    height: 161px;
+    background-image: url(../../assets/botones/JUEGO_NUEVO.png);
+  }
+
+}

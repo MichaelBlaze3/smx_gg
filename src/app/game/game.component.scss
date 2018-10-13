@@ -1,0 +1,72 @@
+div.game {
+  width: 1920px;
+  height: 1080px;
+  background-image: url(../../assets/pantallas/2pantalla_principal.jpg);
+  background-size: contain;
+
+  // Garbage Items
+  img.garbage {
+    position: absolute;
+    top: 200px;
+    -webkit-transform: translate(0px, 0px);
+    transform: translate(0px, 0px);
+    z-index: 9;
+    &.item0 {
+      left: 100px;
+    }
+    &.item1 {
+      left: 400px;
+    }
+    &.item2 {
+      left: 700px;
+    }
+    &.item3 {
+      left: 1000px;
+    }
+  }
+}
+
+div.garbageCan {
+  position: absolute;
+  top: 550px;
+  width: 350px;
+  height: 420px;
+  background-repeat: no-repeat;
+  z-index: 1;
+  &.aluminum {
+    left: 100px;
+    &.empty {
+      background-image: url(../../assets/botes/bote_aluminio.png);
+    }
+    &.full {
+      background-image: url(../../assets/botes/cerrado_aluminio.png);
+    }
+  }
+  &.organic {
+    left: 500px;
+    &.empty {
+      background-image: url(../../assets/botes/bote_organico.png);
+    }
+    &.full {
+      background-image: url(../../assets/botes/cerrado_organico.png);
+    }
+  }
+  &.paper {
+    left: 900px;
+    &.empty {
+      background-image: url(../../assets/botes/bote_papel.png);
+    }
+    &.full {
+      background-image: url(../../assets/botes/cerrado_papel.png);
+    }
+  }
+  &.plastic {
+    left: 1300px;
+    &.empty {
+      background-image: url(../../assets/botes/bote_plastico.png);
+    }
+    &.full {
+      background-image: url(../../assets/botes/cerrado_plastico.png);
+    }
+  }
+}

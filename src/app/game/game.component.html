@@ -1,0 +1,20 @@
+<div class="game">
+
+  <img *ngFor="let item of garbagePlaylist; index as i;"
+  class="garbage draggable item{{i}}"
+  src="../../../../assets/assets/{{item.category}}/{{item.image}}" alt=""
+  mwlDraggable (dragEnd)="dragEnd($event, {index: i, item: item })" (dragStart)="dragStarted({index: i, item: item })">
+
+  <div id="{{garbageCans.aluminio.id}}" class="droppable garbageCan aluminum" [ngClass]="{'empty': !garbageCans.aluminio.full, 'full': garbageCans.aluminio.full}" mwlDroppable
+  (drop)="dropEvent($event, { category: 'aluminio', id: 'can1' })"></div>
+
+  <div id="{{garbageCans.organico.id}}" class="droppable garbageCan organic" [ngClass]="{'empty': !garbageCans.organico.full, 'full': garbageCans.organico.full}" mwlDroppable
+  (drop)="dropEvent($event, { category: 'organico', id: 'can2' })"></div>
+
+  <div id="{{garbageCans.papelycarton.id}}" class="droppable garbageCan paper" [ngClass]="{'empty': !garbageCans.papelycarton.full, 'full': garbageCans.papelycarton.full}" mwlDroppable
+  (drop)="dropEvent($event, { category: 'papelycarton', id: 'can3' })"></div>
+
+  <div id="{{garbageCans.plastico.id}}" class="droppable garbageCan plastic empty" [ngClass]="{'empty': !garbageCans.plastico.full, 'full': garbageCans.plastico.full}" mwlDroppable
+  (drop)="dropEvent($event, { category: 'plastico', id: 'can4' })"></div>
+
+</div>
