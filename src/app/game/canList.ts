@@ -30,7 +30,14 @@ export class CanList {
   }
 
   resetCanList(): void {
-
+    this.garbageCanStatus.aluminio.full = false;
+    this.garbageCanStatus.aluminio.answer = false;
+    this.garbageCanStatus.organico.full = false;
+    this.garbageCanStatus.organico.answer = false;
+    this.garbageCanStatus.papelycarton.full = false;
+    this.garbageCanStatus.papelycarton.answer = false;
+    this.garbageCanStatus.plastico.full = false;
+    this.garbageCanStatus.plastico.answer = false;
   }
 
   getCanStatus(): any {

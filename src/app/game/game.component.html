@@ -6,15 +6,24 @@
   mwlDraggable (dragEnd)="dragEnd($event, {index: i, item: item })" (dragStart)="dragStarted({index: i, item: item })">
 
   <div id="{{garbageCans.aluminio.id}}" class="droppable garbageCan aluminum" [ngClass]="{'empty': !garbageCans.aluminio.full, 'full': garbageCans.aluminio.full}" mwlDroppable
-  (drop)="dropEvent($event, { category: 'aluminio', id: 'can1' })"></div>
+  (drop)="dropEvent($event, { category: 'aluminio', id: 'can1' })">
+  <div class="indicator" [hidden]="areIndicatorsHidden" [ngClass]="{'right': garbageCans.aluminio.answer, 'wrong': !garbageCans.aluminio.answer }"></div>
+  </div>
+  
 
   <div id="{{garbageCans.organico.id}}" class="droppable garbageCan organic" [ngClass]="{'empty': !garbageCans.organico.full, 'full': garbageCans.organico.full}" mwlDroppable
-  (drop)="dropEvent($event, { category: 'organico', id: 'can2' })"></div>
+  (drop)="dropEvent($event, { category: 'organico', id: 'can2' })">
+  <div class="indicator" [hidden]="areIndicatorsHidden" [ngClass]="{'right': garbageCans.organico.answer, 'wrong': !garbageCans.organico.answer }"></div>
+</div>
 
   <div id="{{garbageCans.papelycarton.id}}" class="droppable garbageCan paper" [ngClass]="{'empty': !garbageCans.papelycarton.full, 'full': garbageCans.papelycarton.full}" mwlDroppable
-  (drop)="dropEvent($event, { category: 'papelycarton', id: 'can3' })"></div>
+  (drop)="dropEvent($event, { category: 'papelycarton', id: 'can3' })">
+  <div class="indicator" [hidden]="areIndicatorsHidden" [ngClass]="{'right': garbageCans.papelycarton.answer, 'wrong': !garbageCans.papelycarton.answer }"></div>
+</div>
 
-  <div id="{{garbageCans.plastico.id}}" class="droppable garbageCan plastic empty" [ngClass]="{'empty': !garbageCans.plastico.full, 'full': garbageCans.plastico.full}" mwlDroppable
-  (drop)="dropEvent($event, { category: 'plastico', id: 'can4' })"></div>
+  <div id="{{garbageCans.plastico.id}}" class="droppable garbageCan plastic" [ngClass]="{'empty': !garbageCans.plastico.full, 'full': garbageCans.plastico.full}" mwlDroppable
+  (drop)="dropEvent($event, { category: 'plastico', id: 'can4' })">
+  <div class="indicator" [hidden]="areIndicatorsHidden" [ngClass]="{'right': garbageCans.plastico.answer, 'wrong': !garbageCans.plastico.answer }"></div>
+</div>
 
 </div>

@@ -7,7 +7,7 @@ div.game {
   // Garbage Items
   img.garbage {
     position: absolute;
-    top: 200px;
+    bottom: 750px;
     -webkit-transform: translate(0px, 0px);
     transform: translate(0px, 0px);
     z-index: 9;
@@ -28,9 +28,10 @@ div.game {
 
 div.garbageCan {
   position: absolute;
-  top: 550px;
+  // top: 550px;
+  bottom: 75px;
   width: 350px;
-  height: 420px;
+  height: 365px;
   background-repeat: no-repeat;
   z-index: 1;
   &.aluminum {
@@ -68,5 +69,23 @@ div.garbageCan {
     &.full {
       background-image: url(../../assets/botes/cerrado_plastico.png);
     }
+  }
+  &.full {
+    width: 360px;
+    height: 435px;
+  }
+}
+
+div.indicator {
+  position: absolute;
+  width: 128px;
+  height: 128px;
+  top: 360px;
+  left: 110px;
+  &.right {
+    background-image: url(../../assets/botones/bien.png);
+  }
+  &.wrong {
+    background-image: url(../../assets/botones/error.png);
   }
 }

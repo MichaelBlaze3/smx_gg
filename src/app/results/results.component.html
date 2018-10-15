@@ -1,10 +1,17 @@
 <div class="results">
-
+  <div class="result-msg">
+    {{ message }}
+  </div>
   <div class="stars-container">
+    <div class="stars" *ngFor="let star of starStatus; let i = index" 
+    [ngClass]="{'gris': i >= yellowStars, 'yellow': i < yellowStars }"></div>
+    <!-- <div class="stars gris"></div>
     <div class="stars gris"></div>
     <div class="stars gris"></div>
     <div class="stars gris"></div>
+    <div class="stars gris"></div> -->
   </div>
 
-  <div class="newGame"></div>
+  <!-- New Game Button -->
+  <div class="newGame" (click)="resetGame()"></div>
 </div>

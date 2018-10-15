@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { Garbage } from './garbageList';
 import { CanList } from './canList';
 import { DropEvent, DragEndEvent, DragStartEvent, DragMoveEvent } from 'angular-draggable-droppable';
-
 @Component({
   selector: 'app-game',
   templateUrl: './game.component.html',
@@ -14,6 +13,7 @@ export class GameComponent implements OnInit {
   droppedData: string;
   garbagePlaylist: any[] = [];
   garbageCans: any;
+  areIndicatorsHidden: Boolean = true;
   temporaryItemInteraction: any = {
     index: null,
     category: null,
@@ -75,9 +75,8 @@ export class GameComponent implements OnInit {
     this.temporaryItemInteraction.category = ev.item.category;
   }
 
-  dragEnd(ev: DragEndEvent, data: any): void {
-    // console.log(ev);
-    // console.log(data);
+  dragEnd(ev: any, canObj: any): void {
+
   }
 
   dropEvent(ev: DropEvent, canObj: any): void {
@@ -87,18 +86,22 @@ export class GameComponent implements OnInit {
     } else {
       this.temporaryItemInteraction.answer = false;
     }
-    this.temporaryItemInteraction.canCategory = canObj.category;
-    this.temporaryItemInteraction.canStatus = true;
-    this._canList.updateCanStatus(this.temporaryItemInteraction);
-    this.removeItemFromMyArray();
-    this.createGarbageCans();
+    if (!this.garbageCans[canObj.category].full) {
+      this.temporaryItemInteraction.canCategory = canObj.category;
+      this.temporaryItemInteraction.canStatus = true;
+      this._canList.updateCanStatus(this.temporaryItemInteraction);
+      this.removeItemFromMyArray();
+      this.createGarbageCans();
+    } else {
+      console.log('Garbage can is full');
+    }
+
   }
 
   removeItemFromMyArray(): void {
     this.garbagePlaylist.splice(this.temporaryItemInteraction.index, 1);
-    // console.log(this.garbagePlaylist);
-    // console.log(this.temporaryItemInteraction);
     if (this.garbagePlaylist.length === 0) {
+      this.areIndicatorsHidden = false;
       setTimeout(() => {
         this._router.navigate(['/results']);
       }, 3000);

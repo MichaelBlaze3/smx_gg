@@ -5,11 +5,11 @@ import { AppComponent } from './app.component';
 import { LandingComponent } from './landing/landing.component';
 import { GameComponent } from './game/game.component';
 import { ResultsComponent } from './results/results.component';
-// import { DragDropDirectiveModule} from 'angular4-drag-drop';
-// import { DndModule } from 'ngx-drag-drop';
 import { DragAndDropModule } from 'angular-draggable-droppable';
 import { Garbage } from './game/garbageList';
 import { CanList } from './game/canList';
+import { RemoteService } from './common/remote.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,11 +20,9 @@ import { CanList } from './game/canList';
   imports: [
     BrowserModule,
     MyRouterModule,
-    // DragDropDirectiveModule
-    // DndModule
     DragAndDropModule
   ],
-  providers: [ Garbage, CanList ],
+  providers: [ Garbage, CanList, RemoteService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

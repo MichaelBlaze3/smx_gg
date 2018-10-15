@@ -1,7 +1,21 @@
+@font-face {
+  font-family: 'Janda';
+  src: url(../../assets/JandaManateeSolid.ttf)
+}
 div.results {
   width: 1920px;
   height: 1080px;
   background-image: url(../../assets/pantallas/4pantalla_resultado.jpg);
+
+
+  div.result-msg {
+    font-family: 'Janda';
+    font-size: 150px;
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 250px;
+  }
 
   div.stars-container {
     width: fit-content;
@@ -30,6 +44,7 @@ div.results {
     width: 550px;
     height: 161px;
     background-image: url(../../assets/botones/JUEGO_NUEVO.png);
+    cursor: pointer;
   }
 
 }
